@@ -3,37 +3,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Mytheseus lets you ask for changes inside your Android app, try the update on your phone, and keep what works. A self-hosted experiment in software that fits its owner.">
-  <meta name="theme-color" content="#3552d4">
-  <title>Mytheseus — Make the app your own.</title>
+  <meta name="description" content="Mytheseus helps trusted people make and refine personal Android apps. Ask for a change inside your app, try the signed update, and choose what to keep.">
+  <meta name="theme-color" content="#f6f4ed">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mytheseus — Apps that grow with you">
+  <meta property="og:description" content="Create a personal Android app. Ask for changes, try each update, and keep what works.">
+  <title>Mytheseus — Apps that grow with you</title>
   <link rel="canonical" href="https://mytheseus.com/">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233552d4'/%3E%3Cpath d='M8 11h16M10 16h12M13 21h6' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230d6965'/%3E%3Cpath d='M8 22V10l8 9 8-9v12' fill='none' stroke='%23f6f4ed' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="wrap masthead">
-  <a class="wordmark" href="#" aria-label="Mytheseus home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M8 11h16M13 21h6" stroke="white" stroke-width="4" stroke-linecap="round"/><path d="M10 16h12" stroke="#9fb4ff" stroke-width="4" stroke-linecap="round"/></svg>Mytheseus</a>
-  <a class="nav-link" href="#how-it-works">How it works <span aria-hidden="true">↘</span></a>
+  <a class="wordmark" href="#top" aria-label="Mytheseus home"><span class="mark" aria-hidden="true">m.</span><span>Mytheseus</span></a>
+  <nav aria-label="Main navigation"><a href="#how-it-works">How it works</a><a href="#sharing">Sharing</a><a href="#about">About</a><a href="https://apps.mytheseus.com/">Open Mytheseus <span aria-hidden="true">↗</span></a></nav>
 </header>
 <main id="main">
-  <section class="wrap hero" aria-labelledby="headline">
-    <div class="intro"><h1 id="headline">Make the app<br><em>your own.</em></h1><p class="lead">The best app for you might not exist yet. Start with something simple, then ask for what’s missing — right inside the app.</p><a class="button" href="#how-it-works">Meet Mytheseus <span aria-hidden="true">↓</span></a><p class="caption">An early, self-hosted project for Android.</p></div>
-    <div class="example" aria-label="Illustrative example of asking for an app change">
-      <div class="example-head"><span>Coding</span><span class="example-label">An example</span></div>
-      <p class="request">“Can you add a shopping list I can tick off at the store?”</p>
-      <div class="reply"><span class="reply-label">Ready to try</span><p>Your shopping list is ready. Add an item, then tap to check it off.</p></div>
-      <div class="demo-list" aria-hidden="true"><div><span class="checked">✓</span><s>Apples</s></div><div><span class="box"></span>Oat milk</div><div><span class="box"></span>Coffee</div></div>
-      <div class="decision"><span class="keep">Keep this version</span><span>or ask for a change</span></div>
-      <p class="example-note">You try it. You decide what stays.</p>
+  <section class="hero" id="top" aria-labelledby="headline"><div class="wrap hero-grid">
+    <div class="intro">
+      <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Personal software, built together</p>
+      <h1 id="headline">Apps that grow <em>with you.</em></h1>
+      <p class="lead">Start with an Android app. When you need something different, describe the change inside the app. Try the update on your phone, then decide whether to keep it.</p>
+      <a class="button" href="#how-it-works">See how it works <span aria-hidden="true">↗</span></a>
+      <p class="hero-note">An early, self-hosted project for an operator and trusted users.</p>
     </div>
-  </section>
-  <section class="process" id="how-it-works" aria-labelledby="process-title"><div class="wrap">
-    <div class="section-heading"><h2 id="process-title">Ask. Try. Keep. Repeat.</h2></div>
-    <ol class="steps"><li><span class="number">01</span><h3>Say what you need.</h3><p>A small tweak, a new feature, or something that needs fixing. Describe it in your own words, from the Coding page.</p></li><li><span class="number">02</span><h3>Try the update.</h3><p>An AI coding agent makes the change. Mytheseus builds and signs an update for you to install and try on your Android phone.</p></li><li><span class="number">03</span><h3>Keep what works.</h3><p>Keep the version you like, ask for another change, or cancel the trial. Your feedback shapes the next version.</p></li></ol>
+    <div class="illustration" aria-label="Illustrative app change and trial">
+      <div class="illustration-caption">A change, in your hands <span>01 / 03</span></div>
+      <div class="phone">
+        <div class="phone-top"><span class="phone-app-mark" aria-hidden="true">✳</span><span>My lists</span><span class="phone-menu" aria-hidden="true">⋯</span></div>
+        <div class="phone-body">
+          <span class="screen-label">TODAY</span>
+          <h2>Things to get</h2>
+          <div class="list-row"><span class="check done" aria-hidden="true">✓</span><span class="crossed">Apples</span></div>
+          <div class="list-row"><span class="check" aria-hidden="true"></span><span>Oat milk</span></div>
+          <div class="list-row"><span class="check" aria-hidden="true"></span><span>Coffee</span></div>
+          <div class="phone-action" aria-hidden="true">+ Add an item</div>
+        </div>
+        <div class="phone-footer">Your app, shaped by what you need.</div>
+      </div>
+      <div class="request-card"><span class="request-icon" aria-hidden="true">✎</span><div><span class="card-kicker">You asked</span><p>“Could I tick things off at the store?”</p></div></div>
+      <div class="trial-card"><span class="trial-icon" aria-hidden="true">✓</span><div><span class="card-kicker">Ready to try</span><p>Install the update. Keep it if it works for you.</p></div></div>
+      <p class="illustration-note">Illustrative example</p>
+    </div>
   </div></section>
-  <section class="wrap about" aria-labelledby="about-title"><h2 id="about-title">Same app.<br>More <em>you.</em></h2><div><p>Like the ship of Theseus, an app can change one plank at a time. Mytheseus puts those choices in the hands of the person using it.</p><p>It’s an experiment in personal software: small apps that grow around actual needs, with a history of what changed and a say in what happens next.</p><p class="status">Built for Android. Self-hosted. Preparing for an open-source release.</p></div></section>
+  <section class="process" id="how-it-works" aria-labelledby="process-title"><div class="wrap">
+    <div class="section-head"><p class="eyebrow">HOW IT WORKS</p><h2 id="process-title">One useful change at a time.</h2><p>Mytheseus gives a person a clear way to ask for a change and decide what happens to their app.</p></div>
+    <ol class="steps">
+      <li><span class="number">01</span><h3>Make a request</h3><p>Describe a small tweak, a new feature, or a problem from the app’s Coding page.</p></li>
+      <li><span class="number">02</span><h3>Try the build</h3><p>A coding agent updates the app. Mytheseus builds a signed Android APK for you to install and try.</p></li>
+      <li><span class="number">03</span><h3>Choose what stays</h3><p>Keep the change, request another revision, or cancel. Restoring after an app data change may need operator review.</p></li>
+    </ol>
+  </div></section>
+  <section class="wrap sharing" id="sharing" aria-labelledby="sharing-title">
+    <div class="sharing-intro"><p class="eyebrow">MADE FOR PEOPLE</p><h2 id="sharing-title">Personal to create.<br><em>Easy to share.</em></h2><p>The creator edition includes Coding. When a version is ready to share, an operator can build a separate user edition from kept changes. People using that edition receive updates without the coding controls.</p></div>
+    <div class="edition-cards" aria-label="App editions"><div class="edition-card creator"><span class="edition-icon" aria-hidden="true">✎</span><span class="edition-label">CREATOR EDITION</span><h3>Shape your app</h3><p>Ask for changes, try them on your phone, and choose which version to keep.</p></div><div class="edition-card user"><span class="edition-icon" aria-hidden="true">↗</span><span class="edition-label">USER EDITION</span><h3>Share what works</h3><p>A separate app package receives releases built from changes the creator has kept.</p></div></div>
+  </section>
+  <section class="about" id="about" aria-labelledby="about-title"><div class="wrap about-grid"><div><p class="eyebrow">ABOUT THE PROJECT</p><h2 id="about-title">Why Mytheseus?</h2></div><div><p>Like the ship of Theseus, an app can change a piece at a time while staying yours. Mytheseus is an experiment in software that adapts to real needs through small, reviewable steps.</p><p>It runs on a self-hosted server with an Android Hub for the operator to manage apps and releases. Apps are installed as APKs. This is an early project for trusted participants, rather than an open app marketplace.</p></div></div></section>
 </main>
-<footer class="wrap footer"><a class="wordmark" href="#">Mytheseus</a><span>One change at a time.</span></footer>
+<footer class="wrap footer"><a class="wordmark" href="#top"><span class="mark" aria-hidden="true">m.</span><span>Mytheseus</span></a><span>One change at a time.</span></footer>
 </body>
 </html>
