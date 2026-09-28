@@ -2,6 +2,8 @@
   const track = document.querySelector('[data-showcase-track]');
   const controls = document.querySelector('[data-showcase-controls]');
   if (!track || !controls) return;
+  // A cached or blocked stylesheet must not expose nonfunctional raw controls.
+  if (getComputedStyle(track).getPropertyValue('--showcase-ready').trim() !== '1') return;
 
   const slides = Array.from(track.querySelectorAll('[data-showcase-slide]'));
   const previous = controls.querySelector('[data-showcase-prev]');
@@ -12,6 +14,7 @@
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let active = 0;
   let queued = false;
+  let viewportWidth = window.innerWidth;
 
   function nearestSlide() {
     const left = track.getBoundingClientRect().left;
@@ -37,18 +40,23 @@
 
   function update() {
     queued = false;
-    active = nearestSlide();
-    count.textContent = `${active + 1} of ${slides.length}`;
+    const nextActive = nearestSlide();
+    if (nextActive !== active) {
+      // Keep an expanded history on an offscreen card from stretching the rail.
+      slides[active].querySelectorAll('details[open]').forEach((details) => { details.open = false; });
+      active = nextActive;
+      count.textContent = `${active + 1} of ${slides.length}`;
+    }
     previous.disabled = active === 0;
     next.disabled = active === slides.length - 1;
     pauseHiddenVideos();
   }
 
-  function goTo(index) {
+  function goTo(index, animate = true) {
     const target = Math.max(0, Math.min(slides.length - 1, index));
     track.scrollTo({
       left: slides[target].offsetLeft - slides[0].offsetLeft,
-      behavior: reducedMotion.matches ? 'auto' : 'smooth'
+      behavior: animate && !reducedMotion.matches ? 'smooth' : 'auto'
     });
   }
 
@@ -70,7 +78,24 @@
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) track.querySelectorAll('video').forEach((video) => video.pause());
   });
-  window.addEventListener('resize', update);
+  window.addEventListener('resize', () => {
+    if (window.innerWidth === viewportWidth) return;
+    viewportWidth = window.innerWidth;
+    goTo(active, false);
+    update();
+  });
+
+  track.querySelectorAll('[data-preview-play]').forEach((button) => {
+    const video = document.getElementById(button.getAttribute('aria-controls'));
+    if (!video) return;
+    button.hidden = false;
+    button.addEventListener('click', () => {
+      video.play().catch(() => { button.hidden = false; });
+    });
+    video.addEventListener('play', () => { button.hidden = true; });
+    video.addEventListener('pause', () => { button.hidden = false; });
+    video.addEventListener('ended', () => { button.hidden = false; });
+  });
 
   controls.hidden = false;
   update();
