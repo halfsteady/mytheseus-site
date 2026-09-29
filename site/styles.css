@@ -109,3 +109,22 @@
 @media(min-width:701px){.showcase-media{align-content:start}.showcase-original-mark{top:calc(3.5rem + 380px - 80px);bottom:auto}}
 @media(min-width:701px) and (max-width:960px){.showcase-original-mark{top:calc(3.25rem + 360px - 80px)}}
 .history-steps .history-prompt-label{margin-top:.65rem;color:var(--teal);font-weight:700}
+.about-grid-film{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:4.5rem;align-items:center}
+.about-copy{max-width:34rem}
+.about-copy p:not(.eyebrow){color:#465653;font-size:1.1rem}
+.about-copy p:last-child{margin-bottom:0}
+.film{margin:0}
+.film-frame{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;border-radius:1.15rem;background:var(--teal-dark);box-shadow:0 34px 60px -34px #08282699,0 10px 26px -14px #08282666;isolation:isolate}
+.film-frame:hover{text-decoration:none}
+.film-frame:focus-visible{outline:3px solid var(--teal);outline-offset:5px}
+.film-frame img,.film-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;object-fit:cover}
+.film-play{position:absolute;left:1rem;bottom:1rem;z-index:1;display:inline-flex;align-items:center;gap:.6rem;padding:.5rem 1.05rem .5rem .5rem;border-radius:999px;background:var(--paper);color:var(--teal-dark);font-size:.92rem;font-weight:750;letter-spacing:-.01em;box-shadow:0 8px 22px #0a2a2866;transition:transform .2s ease,background-color .2s ease}
+.film-play svg{width:2.2rem;height:2.2rem;flex:none;padding:.4rem .34rem .4rem .46rem;border-radius:50%;background:var(--teal);fill:var(--paper)}
+.film-length{color:var(--muted);font-weight:650;font-variant-numeric:tabular-nums}
+.film-frame:hover .film-play,.film-frame:focus-visible .film-play{transform:translateY(-2px);background:#fff}
+.film figcaption{margin-top:1rem;color:var(--muted);font-size:.95rem;line-height:1.5}
+.film figcaption strong{display:block;margin-bottom:.15rem;color:var(--ink);font-size:1.02rem}
+.film figcaption a{color:var(--teal);font-weight:650;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:960px){.about-grid-film{grid-template-columns:1fr;gap:2.2rem}.about-copy{max-width:none}}
+@media(max-width:420px){.film-play{left:.7rem;bottom:.7rem;font-size:.85rem}.film-play svg{width:1.9rem;height:1.9rem}}
+@media(prefers-reduced-motion:reduce){.film-play{transition:none}.film-frame:hover .film-play,.film-frame:focus-visible .film-play{transform:none}}
